@@ -1,0 +1,7 @@
+!.eslintrc.js
+!.prettierrc.js
+
+.idea
+dist/
+dev/
+node_modules/

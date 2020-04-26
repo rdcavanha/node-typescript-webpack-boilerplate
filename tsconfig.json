@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "./dist/",
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "allowJs": false,
+    "noEmit": false,
+    "strict": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "module": "commonjs",
+    "removeComments": true,
+    "alwaysStrict": true,
+    "allowUnreachableCode": false,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": false,
+    "typeRoots": [
+      "./src/typings",
+      "./node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
