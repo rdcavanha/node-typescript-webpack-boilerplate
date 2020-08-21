@@ -19,18 +19,20 @@ const createConfiguration: webpack.ConfigurationFactory = (e, options) => {
     new webpack.DefinePlugin({
       __WEBPACK__: true,
     }),
-    new CopyWebpackPlugin([
-      {
-        from: 'package.json',
-        transform: (content): string => {
-          const pkg: any = JSON.parse(content.toString());
-          delete pkg.devDependencies;
-          pkg.scripts = { start: `node ${BUNDLE_FILENAME}` };
-          pkg.main = BUNDLE_FILENAME;
-          return JSON.stringify(pkg);
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'package.json',
+          transform: (content): string => {
+            const pkg: any = JSON.parse(content.toString());
+            delete pkg.devDependencies;
+            pkg.scripts = { start: `node ${BUNDLE_FILENAME}` };
+            pkg.main = BUNDLE_FILENAME;
+            return JSON.stringify(pkg);
+          },
         },
-      },
-    ]),
+      ],
+    }),
   ];
 
   if (isDev) {
